@@ -19,7 +19,7 @@ def home(request):
         data = {"bk_app_code": 'liupeng',
                 "bk_token": bk_token,
                 "bk_app_secret": 'b0850347-93ec-4d92-84db-7637ce6d6056'}
-
+        data = json.dumps(data)
         result = requests.post(app_url,
                                headers={'Accept': 'application/json',
                                         'Content-Type': 'application/json', },
@@ -31,7 +31,7 @@ def home(request):
             print(content.get('data'))
     except:
         print('aaaaaaaaaaa')
-    return render_mako_context(request, '/home_application/index.html')
+    return render_mako_context(request, '/home_application/index.html',content)
 
 
 def dev_guide(request):
