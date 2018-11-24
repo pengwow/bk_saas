@@ -78,7 +78,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="javascript:;">
-                                <span>${ bk_username }</span>
+                                <span>${bk_username}</span>
                             </a>
                         </li>
                     </ul>
@@ -179,6 +179,10 @@
     </div>
 </div>
 <script>
+
+    var bk_username = "${bk_username}";
+
+
     $(function () {
 
         $('#table_demo2').find('input[name="checkall"]').click(function () {
