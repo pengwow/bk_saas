@@ -10,7 +10,8 @@ def home(request):
     """
     try:
         bk_token = request.COOKIES.get('bk_token', None)
-
+        if not bk_token:
+            return render_mako_context(request, '/home_application/dev_guide.html')
         host = 'https://paas-poc.o.qcloud.com'
 
         app_url = host + '/api/c/compapi/v2/cc/search_business/'
