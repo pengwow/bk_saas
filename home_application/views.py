@@ -14,7 +14,7 @@ def home(request):
     is_ok,resp= account.get_bk_user_info(settings.APP_TOKEN)
     # return account.logout(request)
     print(resp)
-    return render_mako_context(request, '/home_application/index.html')
+    return render_mako_context(request, '/home_application/index.html',resp)
 
 def dev_guide(request):
     """
