@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from common.mymako import render_mako_context
-from account.accounts import Account
-from django.conf import settings
-from account.decorators import login_exempt
 import requests
 
 
