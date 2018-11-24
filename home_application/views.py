@@ -18,7 +18,7 @@ def home(request):
     account = Account()
     user_info = account.get_bk_user_info(bk_token)
 
-    return render_mako_context(request, '/home_application/index.html',**user_info)
+    return render_mako_context(request, '/home_application/index.html')
 
 def dev_guide(request):
     """
