@@ -30,7 +30,7 @@ def home(request):
             content = content.get('data')
             print(content.get('data'))
     except:
-        print('aaaaaaaaaaa')
+        return render_mako_context(request, '/home_application/contact.html')
     return render_mako_context(request, '/home_application/index.html')
 
 
