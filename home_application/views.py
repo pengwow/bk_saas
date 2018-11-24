@@ -11,12 +11,12 @@ def home(request):
     """
     首页
     """
-    bk_token = request.COOKIES.get(settings.BK_COOKIE_NAME, None)
+    #bk_token = request.COOKIES.get(settings.BK_COOKIE_NAME, None)
 
 
     #return render_mako_context(request, '/home_application/home.html')
-    account = Account()
-    user_info = account.get_bk_user_info(bk_token)
+    #account = Account()
+    #user_info = account.get_bk_user_info(bk_token)
 
     return render_mako_context(request, '/home_application/index.html')
 
