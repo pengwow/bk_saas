@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from common.mymako import render_mako_context
+from common.mymako import render_mako_context,render_json
 import requests
 import json
 
@@ -46,3 +46,7 @@ def contactus(request):
     联系我们
     """
     return render_mako_context(request, '/home_application/contact.html')
+
+def test(request):
+    test_json ={'result':True,"message":"hello","data":"world"}
+    return render_json(test_json)
