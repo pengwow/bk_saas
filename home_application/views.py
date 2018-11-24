@@ -2,7 +2,7 @@
 
 from common.mymako import render_mako_context
 import requests
-
+import json
 
 def home(request):
     """
@@ -24,13 +24,13 @@ def home(request):
                                headers={'Accept': 'application/json',
                                         'Content-Type': 'application/json', },
                                data=data)
-        import json
+
         if result.status_code == 200:
             content = json.loads(result.content)
             content = content.get('data')
             print(content.get('data'))
     except:
-        return render_mako_context(request, '/home_application/contact.html')
+        print('aaaaaaaaaaa')
     return render_mako_context(request, '/home_application/index.html')
 
 
