@@ -4,31 +4,36 @@ from common.mymako import render_mako_context
 import requests
 
 
+# def home(request):
+#     """
+#     首页
+#     """
+#     bk_token = request.COOKIES.get('bk_token', None)
+#
+#     host = 'https://paas-poc.o.qcloud.com'
+#
+#     app_url = host + '/api/c/compapi/v2/cc/search_business/'
+#
+#     data = {"bk_app_code": 'liupeng',
+#             "bk_token": bk_token,
+#             "bk_app_secret": 'b0850347-93ec-4d92-84db-7637ce6d6056'}
+#
+#     result = requests.post(app_url,
+#                            headers={'Accept': 'application/json',
+#                                     'Content-Type': 'application/json', },
+#                            data=data)
+#     import json
+#     if result.status_code == 200:
+#         content = json.loads(result.content)
+#         content = content.get('data')
+#         print(content.get('data'))
+#
+#     return render_mako_context(request, '/home_application/index.html')
 def home(request):
     """
     首页
     """
-    bk_token = request.COOKIES.get('bk_token', None)
-
-    host = 'https://paas-poc.o.qcloud.com'
-
-    app_url = host + '/api/c/compapi/v2/cc/search_business/'
-
-    data = {"bk_app_code": 'liupeng',
-            "bk_token": bk_token,
-            "bk_app_secret": 'b0850347-93ec-4d92-84db-7637ce6d6056'}
-
-    result = requests.post(app_url,
-                           headers={'Accept': 'application/json',
-                                    'Content-Type': 'application/json', },
-                           data=data)
-    import json
-    if result.status_code == 200:
-        content = json.loads(result.content)
-        content = content.get('data')
-        print(content.get('data'))
-
-    return render_mako_context(request, '/home_application/index.html',**content)
+    return render_mako_context(request, '/home_application/index.html')
 
 def dev_guide(request):
     """
