@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from common.mymako import render_mako_context,render_json
+from common.log import logger
 import requests
 import json
 
@@ -8,6 +9,8 @@ def home(request):
     """
     首页
     """
+    '''
+    
     try:
         bk_token = request.COOKIES.get('bk_token', None)
         if not bk_token:
@@ -31,7 +34,8 @@ def home(request):
             print(content.get('data'))
     except:
         print('aaaaaaaaaaa')
-    return render_mako_context(request, '/home_application/index.html',content)
+    '''
+    return render_mako_context(request, '/home_application/home.html')
 
 
 def dev_guide(request):
@@ -49,4 +53,7 @@ def contactus(request):
 
 def test(request):
     test_json ={'result':True,"message":"hello","data":"world"}
+
+
+    logger.error(str(test_json))
     return render_json(test_json)

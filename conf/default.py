@@ -22,17 +22,17 @@ from django.conf.global_settings import *  # noqa
 # 应用基本信息配置 (请按照说明修改)
 # ==============================================================================
 # 在蓝鲸智云开发者中心 -> 点击应用ID -> 基本信息 中获取 APP_ID 和 APP_TOKEN 的值
-APP_ID = 'liupeng'
-APP_TOKEN = 'b0850347-93ec-4d92-84db-7637ce6d6056'
+APP_ID = 'liupeng-test-1'
+APP_TOKEN = 'bce161ad-188b-4184-8232-a6e97de0cae5'
 
 # 蓝鲸智云开发者中心的域名，形如：http://paas.bking.com
-BK_PAAS_HOST = 'https://paas-poc.o.qcloud.com'
+BK_PAAS_HOST = 'https://paas.blueking.com'
 
 # 请求官方 API 默认版本号，可选值为："v2" 或 ""；其中，"v2"表示规范化API，""表示未规范化API
 DEFAULT_BK_API_VER = 'v2'
 
 # 是否启用celery任务
-IS_USE_CELERY = True
+IS_USE_CELERY = False
 # 本地开发的 celery 的消息队列（RabbitMQ）信息
 BROKER_URL_DEV = 'amqp://guest:guest@127.0.0.1:5672/'
 # TOCHANGE 调用celery任务的文件路径, List of modules to import when celery starts.
@@ -221,7 +221,8 @@ if IS_USE_CELERY:
 # logging
 # ==============================================================================
 # 应用日志配置
-BK_LOG_DIR = os.environ.get('BK_LOG_DIR', '/data/paas/apps/logs/')
+BK_LOG_DIR = os.environ.get('BK_LOG_DIR', 'e:/Temp/logs/')
+#BK_LOG_DIR = os.environ.get('BK_LOG_DIR', '/data/paas/apps/logs/')
 LOGGING_DIR = os.path.join(BASE_DIR, 'logs', APP_ID)
 LOG_CLASS = 'logging.handlers.RotatingFileHandler'
 if RUN_MODE == 'DEVELOP':
